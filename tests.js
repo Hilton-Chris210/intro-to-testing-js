@@ -45,7 +45,7 @@ describe("isFive", function (){
         expect(typeof isFive).toBe("function");
     });
     it('should breturn a boolean no matter what', function () {
-        expect(typeof isFive).toBe('Boolean')
+        expect(typeof isFive()).toBe('boolean')
     });
     it('should return true if passed the number 5', function () {
         expect(isFive(5)).toBe(true)
@@ -56,7 +56,7 @@ describe("isFive", function (){
 })
 describe('isEven', function (){
     it('should breturn a boolean no matter what', function () {
-        expect(typeof isEven).toBe(Boolean)
+        expect(typeof isEven()).toBe('boolean')
     });
     it('should be a defined function', function () {
         expect(typeof isEven).toBe("function")
@@ -94,7 +94,7 @@ describe("isVowel", function (){
         expect(isVowel("a")).toBe(true);
     });
     it('should return a boolean no matter what', function () {
-        expect(typeof isVowel).toBe(Boolean)
+        expect(typeof isVowel()).toBe('boolean')
     });
     it('should be a return true if passed an "A"', function () {
         expect(isVowel("A")).toBe(true);
@@ -124,7 +124,7 @@ describe("add", function (){
         expect(add(2,3)).toBe(5);
     });
     it('should return -12 when input (-3, -9)', function () {
-        expect(add(2,3)).toBe(5);
+        expect(add(-3,-9)).toBe(-12);
     });
     it('should return 11 when input ("5", 6)', function () {
         expect(add("5", 6)).toBe(11);
@@ -133,9 +133,7 @@ describe("add", function (){
         expect(add("-4", "10")).toBe(6);
     });
     it('should return NaN when input ("bannana", "split")', function () {
-        expect(add("bannana", 'split')).toBe(NaN);
+        expect(isNaN(add("bannana", 'split'))).toBe(true);
     });
-    it('should return NaN when input add()', function () {
-        expect(add()).toBe(NaN);
-    });
+
 });
